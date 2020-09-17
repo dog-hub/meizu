@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/resect.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header></header>
+    <!-- 轮播图 -->
+    <div id="banner">
+      <div id="banner-content">
+        <ul>
+          <li>
+            <img src="img-main/bann1.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann2.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann3.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann4.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann5.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann6.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann7.jpg" alt="" />
+          </li>
+          <li>
+            <img src="img-main/bann1.jpg" alt="" />
+          </li>
+        </ul>
+        <div id="banner-bot">
+          <div class="bot"></div>
+          <div class="bot"></div>
+          <div class="bot"></div>
+          <div class="bot"></div>
+          <div class="bot"></div>
+          <div class="bot"></div>
+          <div class="bot"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 身子 -->
+    <section>
+      <div id="nav-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 手机 -->
+      <div id="nav-2">
+        <p class="nav-header">手机</p>
+        <div id="nav1-bgimg"></div>
+        <div id="nav2-top">
+          <div class="pointer" id="mz17"></div>
+          <div class="pointer" id="mz17p"></div>
+        </div>
+        <div id="in-one"></div>
+      </div>
+      <!-- 魅族声学 -->
+      <div id="nav-3">
+        <p class="nav-header">魅族声学</p>
+        <div id="nav2-bgimg"></div>
+        <div id="in-two"></div>
+      </div>
+      <!-- 智能配件 -->
+      <div id="nav-4">
+        <p class="nav-header">智能配件</p>
+        <div id="nav3-bgimg"></div>
+        <div id="in-theer"></div>
+      </div>
+      <!-- 生活周边 -->
+      <div id="nav-5">
+        <p class="nav-header">生活周边</p>
+        <div id="nav4-bgimg"></div>
+        <div id="in-four"></div>
+      </div>
+      <!-- 社区热帖 -->
+      <div id="nav-6">
+        <p class="nav-header">社区热帖</p>
+        <div id="in-five"></div>
+      </div>
+      <!-- Flyme -->
+      <div id="nav-7">
+        <p class="nav-header">Flyme</p>
+        <div id="in-six"></div>
+      </div>
+      <!-- 精彩视频 -->
+      <div id="nav-8">
+        <p class="nav-header">精彩视频</p>
+        <div id="in-seven"></div>
+      </div>
+    </section>
+    <!-- 结尾 -->
+    <footer></footer>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+  $(function () {
+    $("header").load("header.html");
+    $("#in-one").load("index-in1.html");
+    $("#in-two").load("index-in2.html");
+    $("#in-theer").load("index-in2.html");
+    $("#in-four").load("index-in2.html");
+    $("#in-five").load("index-in5.html");
+    $("#in-six").load("index-in6.html");
+    $("#in-seven").load("index-in6.html");
+    $("footer").load("footer.html");
+  });
+
+  let oMzL = document.getElementById("mz17");
+  let oMzR = document.getElementById("mz17p");
+  oMzL.onclick = () => {
+    location.href = "detail.html";
+  };
+  oMzR.onclick = () => {
+    location.href = "detail-copy.html";
+  };
+</script>

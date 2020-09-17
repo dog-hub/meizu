@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyme账号-登录</title>
+    <link rel="stylesheet" href="css/resect.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login-shift.css" />
+    <link rel="stylesheet" href="css/login-shift.css" />
+    <style>
+      #title1 {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        font-size: 5px;
+        background-color: rgb(9, 116, 116);
+        color: aliceblue;
+        font-size: 10px;
+        text-align: center;
+        line-height: 20px;
+        position: absolute;
+        right: -10px;
+        top: 0;
+      }
+      #tt {
+        width: 100px;
+        height: 40px;
+        background-color: #fff;
+        font-size: 10px;
+        position: absolute;
+        right: -54px;
+        top: 18px;
+        border: 1px solid bisque;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div id="header-content">
+        <a href="index.html">
+          <img src="img-login/meizu.png" id="meizu" />
+        </a>
+      </div>
+    </div>
+    <div id="content">
+      <img src="img-login/pic-flyme.png" id="bgcimg" />
+      <div class="login-box" style="height: 478px">
+        <p id="key">
+          <span id="id" class="pointer">账号注册</span>
+        </p>
+        <div id="text-log">
+          <div class="input">
+            <input type="text" id="name" placeholder="手机号/Fiyme账号" />
+          </div>
+          <div class="input">
+            <input type="password" id="pwd" placeholder="密码" />
+            <div id="title1" class="pointer">?</div>
+            <div id="tt">至少6位数 1数字 1大写 1小写 1特殊</div>
+          </div>
+          <button type="button" id="login">注册</button>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-content">
+        <ul id="correlation">
+          <li>
+            <a href="">关于魅族</a>
+          </li>
+          <li>
+            <a href="">工作机会</a>
+          </li>
+          <li>
+            <a href="">联系我们</a>
+          </li>
+          <li>
+            <a href="">法律声明</a>
+          </li>
+          <li>
+            <a href="">常见问题 </a>
+          </li>
+          <li>
+            <a href="">简体中文</a>
+          </li>
+        </ul>
+        <p>
+          客服电话&nbsp;&nbsp;400-788-3333 &nbsp;&nbsp;&nbsp;
+          <a href="">在线客服</a>
+        </p>
+        <div id="business">
+          <div id="wb"></div>
+          <div id="wx"></div>
+          <div id="kj"></div>
+        </div>
+        <ul id="other">
+          <li>
+            &copy;2020 Meizu Telecom Equipment Co., Ltd. All rights
+            reserved.&nbsp;
+          </li>
+          <li>
+            <a href="">备案号: 粤ICP备13003602号-4&nbsp;</a>
+          </li>
+          <li>
+            <a href="">经营许可证编号: 粤B2-20130198&nbsp;</a>
+          </li>
+          <li>
+            <a href="">营业执照&nbsp;</a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img-login/ghs.png" alt="" />粤公网安备 44049102496076号
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+<script>
+  let oTitle = document.getElementById("title1");
+  let oTt = document.getElementById("tt");
+  oTitle.onmouseover = () => {
+    oTt.style.display = "block";
+  };
+  oTitle.onmouseout = () => {
+    oTt.style.display = "none";
+  };
+
+  let oId = document.getElementById("name");
+  let oPassword = document.getElementById("pwd");
+  let oLogin = document.getElementById("login");
+  //   电话号码
+  let reg = /^(13|15)\d{9}$/;
+  //   密码强度 至少6位数 1数字 1大写 1小写 1特殊
+  let pwd = /^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$/;
+
+  oLogin.onclick = () => {
+    //验证是手机号还是密码
+    let t = reg.test(Math.round(oId.value));
+    let name = " ";
+    let phone = " ";
+    if (t) {
+      phone += oId.value;
+    } else {
+      name += oId.value;
+    }
+    if (pwd.test(oPassword.value) == false) {
+      alert("密码强度低");
+    }
+    let xhr = new XMLHttpRequest();
+
+    xhr.open(
+      "get",
+      "php/enroll.php?userName=" +
+        name +
+        "&phoneNumber=" +
+        phone +
+        "&passWord=" +
+        oPassword.value,
+      true
+    );
+
+    xhr.send();
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        fun(xhr.responseText);
+      }
+    };
+  };
+
+  function fun(text) {
+    console.log(text);
+    if (text == "1") {
+      alert("注册成功,正在返回登录界面，请稍等");
+      setTimeout(() => {
+        location.href = "longin.html";
+      }, 3000);
+    }
+  }
+</script>

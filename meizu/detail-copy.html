@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>详情页</title>
+    <link rel="stylesheet" href="css/resect.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <!-- 头部 -->
+      <div id="header"></div>
+      <!-- 粘性框 -->
+      <div id="sticky-nav">
+        <div id="sticky-content">
+          <span>魅族17</span>
+          <a href="">换机指引</a>
+          <a href="">参数</a>
+          <a href="">魅族17航母限定版</a>
+          <a href="">概述</a>
+        </div>
+      </div>
+      <!-- 详情选择（可以先写静态，再加入放大镜） -->
+      <div id="detail">
+        <div id="det-content">
+          <div id="mut"></div>
+          <div id="det-cl">
+            <div id="img" class="pointer">
+              <div id="mut-min" class="pointer"></div>
+              <img src="img-detail/t1.jpg" id="main-img" />
+            </div>
+            <div id="img-arr">
+              <img src="img-detail/f1.jpg" class="pointer" />
+              <img src="img-detail/f2.jpg" class="pointer" />
+              <img src="img-detail/f3.jpg" class="pointer" />
+              <img src="img-detail/f4.jpg" class="pointer" />
+            </div>
+            <div id="db">
+              <p class="pointer">
+                <span></span><br />
+                <span>收藏</span>
+              </p>
+              <p class="pointer">
+                <span></span><br />
+                <span>对比</span>
+              </p>
+            </div>
+          </div>
+          <div id="det-cr">
+            <!-- 名字 -->
+            <p id="name">魅族 17 Pro</p>
+            <p id="introduce">
+              【APP积分兑换大额券 | 购魅族17赠全新壳膜套装 |
+              学生购机享精美礼品】高通骁龙 865 | UFS 3.1 高速闪存 | 6400W
+              全场景影像系统 | 重量平衡设计 | mSmart 5G 快省稳系统方案 |
+              30W有线超充
+            </p>
+            <!-- 价格 -->
+            <div id="price">
+              <p><span>¥</span> 4699.00</p>
+              <p>
+                <span>加价购</span>
+                <span
+                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  另加29元起，即可换购超值商品&nbsp;&nbsp;&nbsp;</span
+                >
+                <a href="">立即加购 ></a>
+              </p>
+            </div>
+            <!-- 方式 -->
+            <div id="way">
+              <p id="function">
+                <span>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+                <span>花呗分期</span>
+                <span>顺丰发货</span>
+                <span>7天无理由退货（具体查看详情）</span>
+              </p>
+              <div id="serve">
+                <p id="site">
+                  <span>配送服务</span>
+                  <span>陕西省 西安市</span>
+                </p>
+                <p>
+                  <span>本商品由 魅族 负责发货并提供售后服务</span>
+                  <a href=""> 商城客服</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="title title-one" style="height: 40px">
+              <div class="tit">
+                型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号
+              </div>
+              <ul id="ul1">
+                <li>魅族 17 Pro</li>
+                <li>魅族 17</li>
+              </ul>
+            </div>
+            <div class="title title-two">
+              <div class="tit">网络类型</div>
+              <ul id="ul2">
+                <li>全网公开版</li>
+              </ul>
+            </div>
+            <div class="title title-there">
+              <div class="tit">颜色分类</div>
+              <ul id="ul3">
+                <li>
+                  <img src="img-detail/a1.png" alt="" />
+                  <span>乌金</span>
+                </li>
+                <li><img src="img-detail/a2.png" alt="" /> 定白</li>
+                <li>
+                  <img src="img-detail/a3.png" alt="" />
+                  <span> 天青 </span>
+                </li>
+                <li>
+                  <img src="img-detail/a4.png" alt="" />
+                  <span>月白天青</span>
+                </li>
+              </ul>
+            </div>
+            <div class="title title-fore">
+              <div class="tit">内存容量</div>
+              <ul id="ul4">
+                <li>8+128GB</li>
+                <li>8+256GB</li>
+              </ul>
+            </div>
+            <div class="title title-five">
+              <div class="tit">选择套餐</div>
+              <ul id="ul5">
+                <li>官方标配</li>
+                <li>EP3C套餐</li>
+                <li>充电套餐</li>
+                <li>碎屏保套餐</li>
+              </ul>
+            </div>
+            <div class="title title-hb">
+              <div class="tit">花呗分期</div>
+              <ul id="ul6">
+                <li>
+                  <p>¥1261.36×3期</p>
+                  <p>含手续费 ￥28.36/期</p>
+                </li>
+                <li>
+                  <p>¥644.24×6期</p>
+                  <p>含手续费 ￥27.74/期</p>
+                </li>
+                <li>
+                  <p>¥331.36×12期</p>
+                  <p>含手续费 ￥23.11/期</p>
+                </li>
+              </ul>
+            </div>
+            <div class="title">
+              <div class="tit">
+                数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量
+              </div>
+              <div class="last-tit">
+                <input type="button" value="-" id="min" class="pointer" />
+                <div id="num">1</div>
+                <input type="button" value="+" id="add" class="pointer" />
+              </div>
+            </div>
+            <div class="pointer goods1">立即购买</div>
+            <div class="pointer goods2">加入购物车</div>
+          </div>
+        </div>
+      </div>
+      <div id="content-con"></div>
+      <footer></footer>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+<script src="js/mut.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+  // jquery引入---------------------------------------------------------------》
+  $(function () {
+    $("#header").load("header.html");
+    $("#ul1").children();
+    $("#ul2").children();
+    $("#ul3").children();
+    $("#ul4").children();
+    $("#ul5").children();
+    $("#ul6").children();
+    fun($("#ul1").children());
+    fun($("#ul2").children());
+    fun($("#ul3").children());
+    fun($("#ul4").children());
+    fun($("#ul5").children());
+    fun($("#ul6").children());
+    $("footer").load("footer.html");
+
+    function fun(liArr) {
+      for (let i = 0; i < liArr.length; i++) {
+        liArr[i].onclick = function () {
+          fun1(liArr);
+          this.style.color = "#111";
+          this.style.border = "1px solid #111";
+        };
+      }
+    }
+
+    function fun1(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].style.color = "#8c8c8c";
+        arr[i].style.border = "1px solid #e0e0e0";
+      }
+    }
+  });
+
+  let oMin = document.getElementById("min");
+  let oAdd = document.getElementById("add");
+  let oNum = document.getElementById("num");
+
+  oMin.onclick = () => {
+    let i = oNum.innerHTML;
+    if (i == "1") {
+      oNum.innerHTML = "1";
+    } else {
+      oNum.innerHTML = i - 1;
+    }
+  };
+
+  oAdd.onclick = () => {
+    let i = oNum.innerHTML;
+    if (i == "3") {
+      oNum.innerHTML = "3";
+    } else {
+      oNum.innerHTML = Number(i) + 1;
+    }
+  };
+
+  let oImg = document.getElementById("img-arr");
+  let oMainImg = document.getElementById("main-img");
+  let mutMax = document.getElementById("mut");
+  mutMax.style.backgroundImage = "url(img-detail/m1.png)";
+  let oImgArr = oImg.children;
+  for (let i = 0; i < oImgArr.length; i++) {
+    oImgArr[i].index = i + 1;
+    oImgArr[i].onclick = function () {
+      oMainImg.src = "img-detail/t" + this.index + ".jpg";
+      funout();
+      mutMax.style.backgroundImage = "url(img-detail/m" + this.index + ".png)";
+      oImgArr[this.index - 1].style.boxShadow =
+        "0px 5px 5px rgb(219, 202, 202)";
+    };
+  }
+
+  function funout() {
+    for (let i = 0; i < oImgArr.length; i++) {
+      oImgArr[i].style.boxShadow = "0px 0px 0px rgb(219, 202, 202)";
+    }
+  }
+
+  // 放大镜--------------------------------------------------------------------》
+  let mutMin = document.getElementById("mut-min");
+  let mutMain = document.getElementById("img");
+  let mut = new amplifter(oMainImg, mutMin, mutMax);
+  mut.bind();
+
+  //弹提示登录----------------------------------------------------------》
+  let oGoodsOne = document.querySelector(".goods1");
+  let cook = _cookie("state");
+  oGoodsOne.onclick = () => {
+    if (cook == "login") {
+      location.href = "shopping.html";
+    } else {
+      let oDiv = document.createElement("div");
+      oDiv.innerHTML = "请登录!";
+      oDiv.style.width = "400px";
+      oDiv.style.height = "300px";
+      oDiv.style.lineHeight = "300px";
+      oDiv.style.textAlign = "center";
+      oDiv.style.fontSize = "20px";
+      oDiv.style.color = "#fff";
+      oDiv.style.backgroundColor = "#16161261";
+      oDiv.style.position = "absolute";
+      oDiv.style.top = "800px";
+      oDiv.style.transform = "translateX(-50%)";
+      oDiv.style.left = "50%";
+      oDiv.style.zIndex = "90000000";
+      let oDivX = document.createElement("div");
+      oDivX.style.position = "absolute";
+      oDivX.style.top = "10px";
+      oDivX.style.right = "10px";
+      oDivX.style.width = "20px";
+      oDivX.style.fontSize = "20px";
+      oDivX.style.textAlign = "center";
+      oDivX.style.lineHeight = "20px";
+      oDivX.style.height = "20px";
+      oDivX.style.cursor = "pointer";
+      oDivX.style.color = "black";
+      oDivX.style.backgroundColor = "#fff";
+      oDivX.innerHTML = "x";
+      let oDivY = document.createElement("div");
+      oDivY.style.position = "absolute";
+      oDivY.style.bottom = "10px";
+      oDivY.style.width = "40px";
+      oDivY.style.fontSize = "20px";
+      oDivY.style.textAlign = "center";
+      oDivY.style.lineHeight = "20px";
+      oDivY.style.height = "20px";
+      oDivY.style.cursor = "pointer";
+      oDivY.style.color = "#ececec";
+      oDivY.style.transform = "translateX(-50%)";
+      oDivY.style.left = "50%";
+      oDivY.style.backgroundColor = "#fff";
+      oDivY.innerHTML = "登录";
+      oDiv.appendChild(oDivX);
+      oDiv.appendChild(oDivY);
+      document.querySelector("body").style.position = "relative";
+      document.querySelector("body").appendChild(oDiv);
+      oDivX.onclick = () => {
+        oDivX.parentElement.style.display = "none";
+      };
+      oDivY.onclick = () => {
+        oDivX.parentElement.style.display = "none";
+        location.href = "longin.html";
+      };
+    }
+  };
+
+  let oGoodsTwo = document.querySelector(".goods2");
+  oGoodsTwo.onclick = () => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", "php/mz_17-copy.php?title=" + oNum.innerHTML, true);
+    xhr.send();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+      }
+    };
+  };
+</script>

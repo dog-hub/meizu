@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="css/login-shift.css" />
+<link rel="stylesheet" href="css/resect.css" />
+
+<img src="img-login/phone.png" class="pointer" id="shift" />
+<p id="key">
+  <span id="id" class="pointer">账号登录</span>
+  <span>|</span>
+  <span id="img" class="pointer">二维码登录</span>
+</p>
+<div id="text-log">
+  <div class="input">
+    <input type="text" id="name" placeholder="手机号/Fiyme账号" />
+  </div>
+  <div class="input">
+    <input type="password" id="pwd" placeholder="密码" />
+  </div>
+  <div id="time">
+    <input type="checkbox" id="box" />
+    <span class="pointer" id="jzmm">记住登录状态</span>
+  </div>
+  <button type="button" id="login">登录</button>
+  <p id="rest">
+    <a href="enroll.html">注册</a>
+    <a href="">忘记密码？</a>
+  </p>
+</div>
+<div id="img-log">
+  <img src="img-login/wxdl.png" id="ewm" alt="" />
+  <p>请使用账号中心右上角或最新的Flyme系统相机扫码功能，扫码登录</p>
+</div>
+<script src="js/cookie.js"></script>
+<script src="js/cookie.js"></script>
+
+<script>
+  let oShift = document.getElementById("shift");
+
+  oShift.onclick = () => {
+    location.href = "longin.html";
+  };
+
+  let oId = document.getElementById("name");
+  let oPassword = document.getElementById("pwd");
+  let oLogin = document.getElementById("login");
+  let reg = /^(13|15)\d{9}$/;
+  oLogin.onclick = () => {
+    let t = reg.test(Math.round(oId.value));
+    let name = " ";
+    let phone = " ";
+    if (t) {
+      phone += oId.value;
+    } else {
+      name += oId.value;
+    }
+    console.log(phone);
+    console.log(name);
+    let xhr = new XMLHttpRequest();
+    xhr.open(
+      "get",
+      "php/name-login.php?username=" +
+        name +
+        "&phonenumber=" +
+        phone +
+        "&password=" +
+        oPassword.value,
+      true
+    );
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        fun(xhr.responseText);
+      }
+    };
+    xhr.send();
+  };
+
+  function fun(text) {
+    console.log(text);
+    if (text == 1) {
+      console.log("登录成功");
+      _cookie("state", "login");
+    } else {
+      console.log("登录失败");
+    }
+  }
+  let oL = document.getElementById("id");
+  let oR = document.getElementById("img");
+  oL.onclick = () => {
+    document.getElementById("img-log").style.display = "none";
+    document.getElementById("text-log").style.display = "block";
+    oR.style.color = "#999999";
+    oL.style.color = "black";
+  };
+
+  oR.onclick = () => {
+    document.getElementById("text-log").style.display = "none";
+    document.getElementById("img-log").style.display = "block";
+
+    oR.style.color = "black";
+    oL.style.color = "#999999";
+  };
+
+  let oBox = document.getElementById("box");
+  let oJzmm = document.getElementById("jzmm");
+  oBox.value = "no";
+  oJzmm.onclick = () => {
+    oBox.click();
+  };
+</script>

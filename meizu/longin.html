@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyme账号-登录</title>
+    <link rel="stylesheet" href="css/resect.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div id="header-content">
+        <a href="index.html">
+          <img src="img-login/meizu.png" id="meizu" />
+        </a>
+      </div>
+    </div>
+    <div id="content">
+      <img src="img-login/pic-flyme.png" id="bgcimg" />
+      <div class="login-box">
+        <img src="img-login/pc.png" class="pointer" id="shift" />
+        <span></span>
+        <p id="key">验证码登录</p>
+        <div id="input">
+          <div id="area-code"></div>
+          <input type="text" id="phone-number" placeholder="手机号码" />
+        </div>
+        <button type="button" id="login">登录</button>
+        <p id="rest">
+          <a href="enroll.html">注册</a>
+          <a href="">忘记密码？</a>
+        </p>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-content">
+        <ul id="correlation">
+          <li>
+            <a href="">关于魅族</a>
+          </li>
+          <li>
+            <a href="">工作机会</a>
+          </li>
+          <li>
+            <a href="">联系我们</a>
+          </li>
+          <li>
+            <a href="">法律声明</a>
+          </li>
+          <li>
+            <a href="">常见问题 </a>
+          </li>
+          <li>
+            <a href="">简体中文</a>
+          </li>
+        </ul>
+        <p>
+          客服电话&nbsp;&nbsp;400-788-3333 &nbsp;&nbsp;&nbsp;
+          <a href="">在线客服</a>
+        </p>
+        <div id="business">
+          <div id="wb"></div>
+          <div id="wx"></div>
+          <div id="kj"></div>
+        </div>
+        <ul id="other">
+          <li>
+            &copy;2020 Meizu Telecom Equipment Co., Ltd. All rights
+            reserved.&nbsp;
+          </li>
+          <li>
+            <a href="">备案号: 粤ICP备13003602号-4&nbsp;</a>
+          </li>
+          <li>
+            <a href="">经营许可证编号: 粤B2-20130198&nbsp;</a>
+          </li>
+          <li>
+            <a href="">营业执照&nbsp;</a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img-login/ghs.png" alt="" />粤公网安备 44049102496076号
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+  $(function () {
+    $("#shift").click(function () {
+      $(".login-box").css({
+        top: 120,
+        height: 478,
+      });
+      $(".login-box").empty();
+      $(".login-box").load("login-shift.html");
+    });
+  });
+</script>

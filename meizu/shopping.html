@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/resect.css" />
+    <link rel="stylesheet" href="css/shopping.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <div id="header-con">
+          <a href="index.html">
+            <img src="img-shopping/meizu.png" id="main" />
+          </a>
+          <p id="con-l">
+            <span>购物车</span>
+            <span>&gt;</span>
+            <span>确认订单</span>
+            <span>&gt;</span>
+            <span>在线支付</span>
+            <span>&gt;</span>
+            <span>完成</span>
+          </p>
+          <p id="con-r">
+            <a href="">我的订单</a>
+            <a href="longin.html">登录</a>
+            <a href="enroll.html">注册</a>
+          </p>
+        </div>
+      </header>
+      <section>
+        <div id="box">
+          <div id="box-con">
+            <img src="img-shopping/xm.png" alt="" />
+            <div id="box-font">
+              <p>您还没有登录！</p>
+              <p>登录后可显示您账号中已加入的商品哦~</p>
+              <a href="longin.html">去登录</a>
+            </div>
+          </div>
+        </div>
+        <div id="login-title">
+          <div id="lt-con">
+            <div>!</div>
+            <span>您还没有登录！登录后可显示您账号中已加入的商品哦~ </span>
+            <a href="longin.html">去登陆</a>
+            <div class="pointer" id="x">×</div>
+          </div>
+        </div>
+        <div id="box-shopping">
+          <div class="shopping-header shop1">
+            <input type="checkbox" id="all" />
+            <span>全选</span>
+            <span>单价（元）</span>
+            <span>数量</span>
+            <span>小计（元）</span>
+            <span class="pointer" id="redact">编辑</span>
+          </div>
+          <div class="shopping-header shop2">
+            <input type="checkbox" />
+            <span>魅族</span>
+            <span>已免运费</span>
+          </div>
+          <!-- 商品添加 -->
+          <div id="goods-copy">
+            <div class="goods">
+              <div id="max">
+                <span>加购价</span>
+                <span>另加29元起，即可换购超值商品</span>
+                <a href="">立即加购 ></a>
+              </div>
+              <div id="goods-bom">
+                <input type="checkbox" id="sure" />
+                <img id="imggg" />
+                <div id="goods-name">
+                  <p id="name">魅族 17</p>
+                  <p id="goods-title">全网通公开版 AG梦幻独角兽 8+128GB</p>
+                </div>
+                <div id="price">￥<span id="m">3699.00</span></div>
+                <div id="num-math">
+                  <button type="button" id="+">-</button>
+                  <span id="n">1</span>
+                  <button type="button" id="-">+</button>
+                </div>
+                <div id="add-price">￥<span>3699.00</span></div>
+                <div id="remove">--</div>
+              </div>
+            </div>
+          </div>
+          <div id="set-footer">
+            <input type="checkbox" id="add-goods" />
+            <span>全选</span>
+            <span id="remove-tit" class="pointer">删除选中的商品</span>
+            <span id="goods-title">
+              共<span id="num-goods-add">&nbsp;&nbsp;2&nbsp;&nbsp;</span>件，
+              已选择<span id="num-goods-add-tit">&nbsp;&nbsp;2&nbsp;&nbsp;</span
+              >件
+            </span>
+            <span id="min-yuan">
+              已优惠 <span>0.00</span> 元， 合计(不含运费)：
+              <span>￥</span>
+              <span id="yuan">00.00</span>
+            </span>
+            <a href="" id="close">去结算</a>
+          </div>
+        </div>
+      </section>
+      <footer></footer>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+<script src="js/shopping.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+  $(function () {
+    $("footer").load("footer.html");
+  });
+  fun1();
+  fun2();
+
+  let oBoxShopping = document.getElementById("box-shopping");
+  let oBox = document.getElementById("box");
+  let cook = _cookie("state");
+  if (cook == "login") {
+    oBox.style.display = "none";
+    oBoxShopping.style.display = "block";
+  } else {
+    oBoxShopping.style.display = "none";
+    oBox.style.display = "block";
+  }
+
+  let oImg = document.getElementById("imggg");
+  let oName = document.getElementById("name");
+  let oM = document.getElementById("m");
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("get", "php/goods-out.php", true);
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      fun(xhr.responseText);
+    }
+  };
+  xhr.send();
+  function fun(text) {
+    let arr = text.split("||");
+    console.log(arr);
+    oName.innerHTML = arr[0];
+    oImg.src = arr[1];
+    oM.innerHTML = arr[2];
+  }
+</script>
